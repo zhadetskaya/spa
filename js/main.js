@@ -5,10 +5,38 @@ $(document).ready(() => {
         arrows: true,
         dots: true,
         slidesToShow: 3,
+        slidesToScroll: 3,
+        responsive: [
+            {
+                breakpoint: 1199,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    infinite: false,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 770,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    });
+
+    $('#gallery-photo').slick({
+        infinite: true,
+        centerMode: true,
+        variableWidth: true,
+        arrows: true,
+        dots: true,
+        slidesToShow: 3,
         slidesToScroll: 1,
         responsive: [
             {
-                breakpoint: 1130,
+                breakpoint: 1200,
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,
@@ -26,31 +54,8 @@ $(document).ready(() => {
         ]
     });
 
-    $('#gallery-photo').slick({
-        infinite: true,
-        arrows: true,
-        dots: true,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        responsive: [
-            {
-                breakpoint: 1200,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    infinite: false,
-                    dots: true
-                }
-            },
-            {
-                breakpoint: 760,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
-        ]
-    });
+
+
 
     $(function () {
         $("#accordion").accordion();
@@ -63,11 +68,13 @@ $(document).ready(() => {
     })
 
 
+
     $('#burger').click(() => {
         $('#header-menu').toggleClass('menu-open');
+        $('body').css('position', 'fixed')
     })
 
-    $('#header-container a, #territory').click(() => {
+    $('#header-container a, #territory, #close').click(() => {
         $('#header-menu').removeClass('menu-open')
     })
 
@@ -86,7 +93,40 @@ $(document).ready(() => {
         let ritual = $('#ritual');
         let timeDate = $('#time-date');
 
-        if (name.val() && phone.val() && ritual.val() && timeDate.val()) {
+        let hasError = false;
+        $('#reserve-error').hide();
+        if (!name.val()) {
+            $('#reserve-error').show();
+            name.css('border-color', 'red');
+            hasError = true;
+        }
+        if (name.val()) {
+            $('#reserve-error').show();
+            name.css('border-color', 'red');
+            hasError = true;
+        }
+        if (!phone.val()) {
+            $('#reserve-error').show();
+            phone.css('border-color', 'red');
+            hasError = true;
+        }
+        if (!ritual.val()) {
+            $('#reserve-error').show();
+            ritual.css('border-color', 'red');
+            hasError = true;
+        }
+        if (!timeDate.val()) {
+            $('#reserve-error').show();
+            timeDate.css('border-color', 'red');
+            hasError = true;
+        } else {
+            name.css('border-color', 'rgb(114, 17, 99)');
+            phone.css('border-color', 'rgb(114, 17, 99)');
+            ritual.css('border-color', 'rgb(114, 17, 99)');
+            timeDate.css('border-color', 'rgb(114, 17, 99)');
+        }
+        // if (name.val() && phone.val() && ritual.val() && timeDate.val()) {
+        if (!hasError) {
             $.ajax({
                 type: 'post',
                 url: 'mail.php',

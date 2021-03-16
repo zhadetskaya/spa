@@ -66,7 +66,7 @@ body {
     color: rgb(44, 5, 38);
     border-bottom: solid 1px transparent;
     padding-bottom: 2px;
-
+    height: 16px;
 }
 
 .header-item.active{
@@ -77,6 +77,7 @@ body {
 }
 
 .header-item:hover{
+    color: rgb(114, 17, 99);
     border-bottom: solid 1px rgb(114, 17, 99);
 }
 .main-logo {
@@ -316,7 +317,7 @@ h1 .logo {
 #circle-big {
     position: absolute;
     left: -184px;
-    top: -150px;
+    top: -189px;
 }
 
 #rose-stock {
@@ -346,6 +347,10 @@ h1 .logo {
     font-family: "MyriadPro", sans-serif;
     height: 50px;
 }
+#stock-btn{
+    z-index: 2;
+    position: relative;
+}
 
 #masters {
     position: relative;
@@ -366,7 +371,7 @@ h1 .logo {
     font-size: 16px;
     font-family: "Nunito", sans-serif;
     color: rgb(44, 5, 38);
-    max-width: 517px;
+    max-width: 525px;
     margin-bottom: 25px;
 }
 #masters-photo{
@@ -379,20 +384,23 @@ h1 .logo {
     margin: 0 auto;
 }
 
+#slick-slide-control02{
+    content: '3';
+}
 .master-name, #gallery-photo img {
     transition: all .5s ease;
 }
 
  #gallery-photo img:hover, .master-name:hover {
     transition: all .5s ease;
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 #masters-photo .slick-next:before {
     content: url("../images/next.png");
     position: absolute;
     top: 205px;
-    right: 600px;
+    right: 570px;
 }
 
 #masters-photo .slick-prev:before {
@@ -410,7 +418,6 @@ h1 .logo {
     content: '2';
 }
 #masters-photo button#slick-slide-control02::before {
-    display: none;
     content: '3';
 }
 #masters-photo button#slick-slide-control03::before {
@@ -482,7 +489,7 @@ h1 .logo {
     font-size: 16px;
     font-family: "Nunito", sans-serif;
     color: rgb(44, 5, 38);
-    max-width: 676px;
+    max-width: 695px;
     margin: 30px 0 40px 0;
 }
 
@@ -543,7 +550,7 @@ h1 .logo {
 
 .slick-prev:before {
     position: absolute;
-    bottom: -201px;
+    bottom: -200px;
     left: 465px;
     content: url("../images/back.png");
 }
@@ -551,7 +558,7 @@ h1 .logo {
 .slick-next:before {
     content: url("../images/next.png");
     position: absolute;
-    bottom: -201px;
+    bottom: -200px;
     right: 465px;
 }
 img.slick-slide.slick-cloned {
@@ -895,7 +902,7 @@ a {
 }
 
 .reservation-cancel img {
-    margin-top: 14px;
+    margin-top: 15px;
 }
 
 .reserve-input input, select {
@@ -983,7 +990,7 @@ select{
 }
 .shadow:hover{
     fill: #721163;
-    filter: drop-shadow(2px 2px 2px #721163);
+    filter: drop-shadow(0px 1px 2px #721163);
 }
 
 .header-number a {

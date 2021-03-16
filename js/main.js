@@ -12,7 +12,7 @@ $(document).ready(() => {
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 2,
-                    infinite: false,
+                    infinite: true,
                     dots: true
                 }
             },
@@ -28,8 +28,8 @@ $(document).ready(() => {
 
     $('#gallery-photo').slick({
         infinite: true,
-        centerMode: true,
-        variableWidth: true,
+        // centerMode: true,
+        // variableWidth: true,
         arrows: true,
         dots: true,
         slidesToShow: 3,
@@ -40,13 +40,15 @@ $(document).ready(() => {
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,
-                    infinite: false,
+                    infinite: true,
                     dots: true
                 }
             },
             {
                 breakpoint: 770,
                 settings: {
+                    centerMode: true,
+                    variableWidth: true,
                     slidesToShow: 1,
                     slidesToScroll: 1
                 }
@@ -75,7 +77,8 @@ $(document).ready(() => {
     })
 
     $('#header-container a, #territory, #close').click(() => {
-        $('#header-menu').removeClass('menu-open')
+        $('#header-menu').removeClass('menu-open');
+        $('body').css('position', 'static')
     })
 
     $('.open-modal').click(() => {
@@ -93,14 +96,15 @@ $(document).ready(() => {
         let ritual = $('#ritual');
         let timeDate = $('#time-date');
 
+        name.css('border-color', 'rgb(114, 17, 99)');
+        phone.css('border-color', 'rgb(114, 17, 99)');
+        ritual.css('border-color', 'rgb(114, 17, 99)');
+        timeDate.css('border-color', 'rgb(114, 17, 99)');
+
+        $('#reserve-error').show();
         let hasError = false;
         $('#reserve-error').hide();
         if (!name.val()) {
-            $('#reserve-error').show();
-            name.css('border-color', 'red');
-            hasError = true;
-        }
-        if (name.val()) {
             $('#reserve-error').show();
             name.css('border-color', 'red');
             hasError = true;
@@ -119,12 +123,8 @@ $(document).ready(() => {
             $('#reserve-error').show();
             timeDate.css('border-color', 'red');
             hasError = true;
-        } else {
-            name.css('border-color', 'rgb(114, 17, 99)');
-            phone.css('border-color', 'rgb(114, 17, 99)');
-            ritual.css('border-color', 'rgb(114, 17, 99)');
-            timeDate.css('border-color', 'rgb(114, 17, 99)');
         }
+
         // if (name.val() && phone.val() && ritual.val() && timeDate.val()) {
         if (!hasError) {
             $.ajax({
@@ -142,7 +142,6 @@ $(document).ready(() => {
             });
         } else {
             $('#reserve-error').show();
-            $('.input').css('border-color', 'red')
         }
     })
 
@@ -150,6 +149,14 @@ $(document).ready(() => {
 
     $('#my-number').click(() => {
         let number = $('#number');
+
+        let hasError = false;
+        $('#call-error').hide();
+        if (!number.val()) {
+            $('#call-error').show();
+            name.css('border-color', 'red');
+            hasError = true;
+        }
 
         if (number.val()) {
             $.ajax({
@@ -166,7 +173,7 @@ $(document).ready(() => {
             });
         } else {
             $('#call-error').show();
-            number.css('border-color', 'red')
+            // number.css('border-color', 'red')
         }
     })
 

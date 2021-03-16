@@ -35,10 +35,12 @@
 
     #masters-photo .slick-prev:before {
         left: 555px;
+        bottom: -200px;
     }
 
     #masters-photo .slick-next:before {
-        right: 585px;
+        right: 555px;
+        top: 200px
     }
 
     .slick-next:before {
@@ -69,23 +71,26 @@
     #masters-photo, #gallery-photo {
         max-width: 740px;
     }
-
+    #masters-photo button#slick-slide-control03::before {
+        display: block;
+        content: '4';
+    }
     #masters-photo .slick-prev:before {
         left: 325px;
         bottom: -193px;
     }
 
     #masters-photo .slick-next:before {
-        right: 356px;
+        right: 325px;
         top: 193px;
     }
 
     .slick-prev:before {
-        left: 250px;
+        left: 235px;
     }
 
     .slick-next:before {
-        right: 250px;
+        right: 235px;
     }
 
     #spa-info-container h2 {
@@ -95,6 +100,7 @@
     #spa-text {
         margin: 31px auto 45px auto;
         text-align: center;
+        max-width: 510px;
     }
 
     #spa-items {
@@ -202,6 +208,7 @@
 
     #territory-info {
         max-width: 450px;
+        margin: 0 auto;
     }
 
     h1 {
@@ -279,7 +286,10 @@
         max-width: 600px;
         padding: 65px 0 110px 0;
     }
-
+#accordion{
+    display: block;
+    margin: 0 auto;
+}
     .ui-accordion .ui-accordion-header {
         padding: 20px;
     }
@@ -400,11 +410,13 @@
     }
 
     #masters-photo .slick-next:before {
-        right: 99px;
+        right: 71px;
+        height: 20px;
     }
-    #slick-slide-control07{
-        display: none;
+    #masters-photo button#slick-slide-control07::before {
+        content: '8';
     }
+
     .master-info {
         margin-left: 0;
     }
@@ -481,7 +493,13 @@
     #burger {
         display: block;
     }
-
+#stock{
+    padding-left: 0;
+    padding-right: 0;
+}
+    #rose-stock {
+        top: 6px;
+    }
     #header-menu-container, .modal {
         left: 0;
         top: 0;
@@ -525,9 +543,11 @@
         background-size: cover;
     }
 
-    #territory-container {
+    #territory-container, #offer, #masters {
         backdrop-filter: blur(3px);
         text-align: center;
+        padding-right: 0;
+        padding-left: 0;
     }
 
     #territory-info .btn {
@@ -581,7 +601,7 @@
     }
 
     #gallery-text, #master-text {
-        max-width: 440px;
+        max-width: 310px;
     }
 
     .title {
@@ -602,7 +622,8 @@
     }
 
     #call-me {
-        margin-left: 24px;
+        display: block;
+        margin: 20px auto 0 auto;
     }
 
     #call-text {
@@ -643,6 +664,7 @@
 
 /*320-479*/
 @media screen and (max-width: 479px) {
+
     .logo {
         font-size: 40px;
     }
@@ -652,10 +674,13 @@
     }
 
     .header-number {
-        font-size: 9px;
+        font-size: 13px;
         width: auto;
     }
 
+    #footer .header-number {
+        margin-top: 10px;
+    }
     h1 {
         width: 260px;
     }
@@ -665,12 +690,8 @@
         padding-bottom: 60px;
     }
 
-    /*#masters-photo button#slick-slide-control01::before, #masters-photo button#slick-slide-control00::before {*/
-    /*    content: '2';*/
-    /*    margin-left: 40px;*/
-    /*}*/
     #gallery-container .slick-dots li button:before {
-        margin-top: 64px;
+        margin-top: 30px;
     }
 
     #gallery-photo img {
@@ -679,7 +700,7 @@
         margin: 0 auto;
     }
     #slick-slide-control19{
-        display: none;
+        content: url("../images/dots.png");
     }
     .wait-image img {
         width: 60px;
@@ -705,7 +726,7 @@
     }
 
     #stock-text {
-        width: 150px
+        width: 200px;
     }
 
     #spa-rose {
@@ -726,22 +747,24 @@
     }
 
     #masters-photo .slick-next:before {
-        right: 77px;
+        right: 48px;
         top: 160px;
     }
-
+    #rose-gallery {
+        bottom: -120px;
+    }
     img.slick-slide.slick-current.slick-active {
         width: 300px;
     }
 
     .slick-next:before {
-        right: 70px;
-        bottom: -171px;
+        right: 35px;
+        bottom: -137px;
     }
 
     .slick-prev:before {
-        left: 40px;
-        bottom: -171px;
+        left: 35px;
+        bottom: -137px;
     }
     .slick-list.draggable {
         padding: 0;
@@ -775,8 +798,11 @@
     }
 
     #call-me {
-        margin-left: 20px;
-        max-width: 240px;
+        max-width: 279px;
+        margin: 20px auto 0 auto;
+    }
+    #rose-stone{
+        display: none;
     }
 
     #call-text {
@@ -800,6 +826,7 @@
 
     #contacts-container {
         max-width: 290px;
+        margin-top: -70px;
     }
 
     iframe {
@@ -827,7 +854,7 @@
     }
 
     #messagers {
-        max-width: 80px;
+        max-width: 125px;
     }
 
     #messagers img {
@@ -852,11 +879,32 @@
     }
 
     .instagram {
-        height: 18px;
+        height: 25px;
     }
 
     .facebook {
-        height: 13px;
+        height: 19px;
     }
+}
+
+@media screen and (max-width: 340px) {
+    #gallery-photo {
+        width: 320px;
+    }
+    #masters{
+        padding: 0;
+    }
+    .slick-prev:before{
+        left: 160px;
+        bottom: -160px;
+    }
+    .slick-next:before{
+        right: 160px;
+        bottom: -160px;
+    }
+    #header .header-number a {
+        display: none;
+    }
+
 }
 

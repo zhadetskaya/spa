@@ -275,7 +275,10 @@
     #rose-stock {
         top: 45px;
     }
-
+#questions, #contacts{
+    padding-left: 0;
+    padding-right: 0;
+}
     #questions-container h2 {
         margin-bottom: 0;
         text-align: center;
@@ -390,9 +393,6 @@
         margin: 20px auto;
     }
 
-    /*#master-name, #masters-photo {*/
-    /*    width: 350px;*/
-    /*}*/
     #masters-photo img {
         width: 100%;
     }
@@ -431,9 +431,6 @@
         height: 250px;
     }
 
-    /*#gallery-photo img {*/
-    /*    margin: 0 auto;*/
-    /*}*/
     .img.slick-slide.slick-cloned {
         display: none;
     }
@@ -527,7 +524,6 @@
 
     #header-menu.menu-open #header-menu-container {
         display: block;
-        /*position: relative;*/
     }
 
     #close {
@@ -636,11 +632,13 @@
 
     iframe {
         max-width: 430px;
-        margin-left: 10px;
     }
 
     #contacts-container {
-        max-width: 420px;
+        max-width: 440px;
+    }
+    #contacts a{
+        display: none;
     }
 
     #messagers img {
@@ -830,7 +828,7 @@
     }
 
     iframe {
-        max-width: 255px;
+        max-width: 290px;
         height: 270px;
     }
 
@@ -905,6 +903,8 @@
     #header .header-number a {
         display: none;
     }
-
+    .spa-info-text{
+        height: 110px;
+    }
 }
 

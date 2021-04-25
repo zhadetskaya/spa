@@ -245,6 +245,7 @@ h1 .logo {
 
 #spa-items {
     display: flex;
+    /*display: -ms-flexbox;*/
     justify-content: space-between;
     align-items: center;
 }
@@ -378,6 +379,8 @@ h1 .logo {
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
+    display: -ms-flexbox;
+    -ms-flex-pack: center;
 }
 #masters-photo img {
     width: 380px;
@@ -998,6 +1001,6 @@ select{
     color: #000;
 }
 a:focus{
-
     outline: -webkit-focus-ring-color auto 0;
 }
+

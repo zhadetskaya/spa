@@ -20,7 +20,7 @@ $(document).ready(() => {
                 breakpoint: 770,
                 settings: {
                     slidesToShow: 1,
-                    slidesToScroll: 1
+                    slidesToScroll: 1,
                 }
             }
         ]
